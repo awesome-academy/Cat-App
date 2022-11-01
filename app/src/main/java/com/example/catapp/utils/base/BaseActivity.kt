@@ -1,7 +1,12 @@
 package com.example.catapp.utils.base
 
+import android.content.Context
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
@@ -13,4 +18,22 @@ abstract class BaseActivity<T : ViewBinding>(private val inflater: (LayoutInflat
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
     }
+
+    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
+        if (hideKeyboardOnTouchOutside() && event.action == MotionEvent.ACTION_DOWN) {
+            val v = currentFocus
+            if (v is EditText) {
+                val outRect = Rect()
+                v.getGlobalVisibleRect(outRect)
+                if (!outRect.contains(event.rawX.toInt(), event.rawY.toInt())) {
+                    v.clearFocus()
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(v.windowToken, 0)
+                }
+            }
+        }
+        return super.dispatchTouchEvent(event)
+    }
+
+    protected fun hideKeyboardOnTouchOutside() = true
 }

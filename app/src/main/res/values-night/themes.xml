@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.CatApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/color_purple_200</item>
+        <item name="colorPrimaryVariant">@color/color_purple_700</item>
+        <item name="colorOnPrimary">@color/color_black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/color_teal_200</item>
+        <item name="colorSecondaryVariant">@color/color_teal_200</item>
+        <item name="colorOnSecondary">@color/color_black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/purple</item>
+        <item name="android:statusBarColor">@color/color_pink</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

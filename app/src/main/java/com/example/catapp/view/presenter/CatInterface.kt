@@ -1,13 +1,12 @@
 package com.example.catapp.view.presenter
 
-import android.content.Context
 import com.example.catapp.data.model.responsemodel.Cat
 import java.lang.Exception
 
 interface CatInterface {
     interface Presenter {
         fun getLocalCat()
-        fun getRemoteCat(userAPI: String)
+        fun getRemoteCat(userAPI: String, limit: String)
     }
 
     interface View {

@@ -14,8 +14,8 @@ class CatPresenter(
         TODO("Not yet implemented")
     }
 
-    override fun getRemoteCat(userAPI: String) {
-        catRepository.getCat(userAPI, object : OnResultListener<MutableList<Cat>> {
+    override fun getRemoteCat(userAPI: String, limit: String) {
+        catRepository.getCat(userAPI, limit, object : OnResultListener<MutableList<Cat>> {
             override fun onSuccess(data: MutableList<Cat>) {
                 view.onGetCatSuccess(data)
             }

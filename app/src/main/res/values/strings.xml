@@ -4,4 +4,18 @@
     <string name="enter_your_api">Enter your API</string>
     <string name="get_your_api_here">Get your API here</string>
     <string name="text_login">Login</string>
+    <string name="text_random">Random</string>
+    <string name="text_next">Next</string>
+    <string name="text_previous">Previous</string>
+    <string name="text_API">live_5gYTnFRh7t9AtwYdCorHJvf2ltsVOEu695wOX6PQjML71C8AqwuLFdiB2BpZghDN</string>
+    <string name="text_order">Order</string>
+    <string name="text_breed">Breed</string>
+    <string name="text_category">Category</string>
+
+    <string-array name="order">
+        <item>Random</item>
+        <item>Newest</item>
+        <item>Last</item>
+    </string-array>
+
 </resources>

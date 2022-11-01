@@ -35,4 +35,5 @@ object CatEntry {
     const val WIKI = "wikipedia_url"
     const val WEIGHT = "weight"
     const val METRIC = "metric"
+    const val IMAGE = "image"
 }

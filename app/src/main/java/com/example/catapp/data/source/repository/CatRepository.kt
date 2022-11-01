@@ -4,7 +4,7 @@ import com.example.catapp.data.model.responsemodel.Cat
 import com.example.catapp.data.source.CatDataSource
 import com.sun.mvp.data.repository.source.remote.OnResultListener
 
-class CatRepository (
+class CatRepository(
     private val remote: CatDataSource.Remote,
     private val local: CatDataSource.Local
 ) : CatDataSource.Local, CatDataSource.Remote {
@@ -12,8 +12,12 @@ class CatRepository (
         TODO("Not yet implemented")
     }
 
-    override fun getCat(userAPI: String, listener: OnResultListener<MutableList<Cat>>) {
-        remote.getCat(userAPI ,listener)
+    override fun getCat(
+        userAPI: String,
+        limit: String,
+        listener: OnResultListener<MutableList<Cat>>
+    ) {
+        remote.getCat(userAPI, limit, listener)
     }
 
     companion object {

@@ -8,7 +8,7 @@ import com.example.catapp.data.model.responsemodel.categories.CategoriesItem
 import org.json.JSONException
 import org.json.JSONObject
 
-class ParseJson {
+class ParseCatJson {
 
     fun catParseJson(jsonObject: JSONObject) = Cat().apply {
         jsonObject.let {
@@ -29,13 +29,13 @@ class ParseJson {
         }
 
         breed = try {
-            catBreadParse(jsonObject)
+            catBreedParse(jsonObject)
         } catch (e: JSONException) {
             null
         }
     }
 
-    private fun catBreadParse(jsonObject: JSONObject): Breed? {
+    private fun catBreedParse(jsonObject: JSONObject): Breed? {
         var breed: Breed? = null
         val breedBox = jsonObject.getJSONArray(CatEntry.BREEDS)
         if (breedBox.length() > 0) {

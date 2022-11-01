@@ -10,6 +10,6 @@ interface CatDataSource {
     }
 
     interface Remote {
-        fun getCat(userAPI: String, listener: OnResultListener<MutableList<Cat>>)
+        fun getCat(userAPI: String, limit: String, listener: OnResultListener<MutableList<Cat>>)
     }
 }

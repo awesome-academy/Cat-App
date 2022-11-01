@@ -1,6 +1,6 @@
 package com.example.catapp.data.source.remote.fetchjson
 
-import com.example.catapp.data.model.responsemodel.CatEntry
+import com.example.catapp.utils.BREEDS
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -26,7 +26,8 @@ class ParseDataWithJson {
         try {
             if (jsonObject != null)  {
                 return when(keyEntity) {
-                    "" -> ParseJson().catParseJson(jsonObject)
+                    "" -> ParseCatJson().catParseJson(jsonObject)
+                    BREEDS -> ParseBreedsJson().breedParse(jsonObject)
                     else -> null
                 }
             }

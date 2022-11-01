@@ -2,6 +2,7 @@ package com.example.catapp.data.source.remote.fetchjson
 
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.sun.mvp.data.repository.source.remote.OnResultListener
 import org.json.JSONArray
 import java.io.BufferedReader
@@ -11,7 +12,7 @@ import java.net.URL
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
-class GetJsonFromUrl<T> constructor(
+class GetJsonFromUrl<T> (
     private val urlString: String,
     private val keyEntity: String,
     private val userAPI: String,
@@ -33,7 +34,9 @@ class GetJsonFromUrl<T> constructor(
             data = ParseDataWithJson().parseJsonToData(JSONArray(responseJson), keyEntity) as? T
             mHandler.post {
                 try {
-                    data?.let { listener.onSuccess(it) }
+                    data?.let { listener.onSuccess(it)
+                    }
+
                 } catch (e: Exception) {
                     listener.onError(exception)
                 }
