@@ -4,7 +4,8 @@
     <string name="enter_your_api">Enter your API</string>
     <string name="get_your_api_here">Get your API here</string>
     <string name="text_login">Login</string>
-    <string name="text_random">Random</string>
+    <string name="text_search">Search</string>
+    <string name="text_add_to_fav">Add to Favorite</string>
     <string name="text_next">Next</string>
     <string name="text_previous">Previous</string>
     <string name="text_API">live_5gYTnFRh7t9AtwYdCorHJvf2ltsVOEu695wOX6PQjML71C8AqwuLFdiB2BpZghDN</string>
@@ -12,6 +13,22 @@
     <string name="text_breed">Breed</string>
     <string name="text_category">Category</string>
     <string name="text_number_one">1</string>
+    <string name="text_breed_origin">Origin: </string>
+    <string name="text_breed_detail">Description: </string>
+    <string name="text_breed_life_span">Life span: </string>
+    <string name="text_breed_child_friendly">Child Friendly</string>
+    <string name="text_breed_dog_friendly">Dog Friendly</string>
+    <string name="text_breed_adaptability_friendly">Adaptability</string>
+    <string name="text_breed_health">Health Issues</string>
+    <string name="text_breed_intelligence">Intelligence</string>
+    <string name="text_read_more_at_wikipedia"><u>Read more at Wikipedia</u></string>
+    <string name="text_download">Download</string>
+    <string name="text_add_to_favourite">Add to Favourite</string>
+    <string name="text_delete">Delete</string>
+    <string name="text_asking_permission">Permission Required</string>
+    <string name="text_accept">Accept</string>
+    <string name="text_deny">Deny</string>
+    <string name="text_permission_image_detail">This feature requires your permission to save photos to your device</string>
 
     <string-array name="order">
         <item>Random</item>

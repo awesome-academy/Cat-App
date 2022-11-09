@@ -10,7 +10,7 @@ import com.example.catapp.data.source.remote.fetchjson.GetJson
 import com.example.catapp.utils.BASE_URL_SEARCH
 import com.example.catapp.utils.BASE_URL_BREEDS
 import com.example.catapp.utils.LIMIT_9
-import com.example.catapp.utils.LIMIT_10
+import com.example.catapp.utils.LIMIT_20
 import com.example.catapp.utils.BREEDS
 import com.example.catapp.utils.BASE_URL_CATEGORIES
 import com.example.catapp.utils.CATEGORIES_TAG
@@ -22,8 +22,10 @@ class CatRemoteDataSource : CatDataSource.Remote {
         userAPI: String, body: SearchModel, listener: OnResultListener<MutableList<Cat>>
     ) {
         val url = BASE_URL_SEARCH + LIMIT_9 +
+                "&page=${body.pageNumber}" +
                 "&breed_ids=${body.breadID}" +
                 "&category_ids=${body.category}" +
+                "&order=${body.order}" +
                 IMAGE_TYPE
         GetJson(
             urlString = url, keyEntity = "", userAPI = userAPI, listener = listener
@@ -32,7 +34,7 @@ class CatRemoteDataSource : CatDataSource.Remote {
 
     override fun getBreeds(listener: OnResultListener<MutableList<BreedItem>>) {
         GetJson(
-            urlString = BASE_URL_BREEDS + LIMIT_10,
+            urlString = BASE_URL_BREEDS + LIMIT_20,
             keyEntity = BREEDS,
             userAPI = "",
             listener = listener

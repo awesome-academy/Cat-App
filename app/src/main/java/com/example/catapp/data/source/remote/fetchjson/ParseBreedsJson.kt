@@ -26,7 +26,7 @@ class ParseBreedsJson {
 
         val imageUrl = jsonObject.getJSONObject(CatEntry.IMAGE).optString(CatEntry.URL)
         val imageID = jsonObject.getJSONObject(CatEntry.IMAGE).optString(CatEntry.ID)
-        val image = Image(imageUrl, imageID)
+        val image = Image(imageID, imageUrl)
 
         return BreedItem(
             adaptability,

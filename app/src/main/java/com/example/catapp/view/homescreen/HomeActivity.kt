@@ -2,12 +2,12 @@ package com.example.catapp.view.homescreen
 
 import android.os.Bundle
 import com.example.catapp.databinding.ActivityHomeBinding
-import com.example.catapp.utils.PAGE_TWO
-import com.example.catapp.utils.NONE
-import com.example.catapp.utils.PAGE_ONE
-import com.example.catapp.utils.IMAGES
 import com.example.catapp.utils.USER_API
+import com.example.catapp.utils.PAGE_ONE
+import com.example.catapp.utils.NONE
 import com.example.catapp.utils.BREEDS
+import com.example.catapp.utils.PAGE_TWO
+import com.example.catapp.utils.IMAGES
 import com.example.catapp.utils.FAVOURITES
 import com.example.catapp.utils.base.BaseActivity
 import com.example.catapp.view.adapter.ViewPagerAdapter
@@ -21,7 +21,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
     private val breedFragment = BreedFragment()
     private val imageFragment = ImageFragment()
     private val favouriteFragment = FavouriteFragment()
-    private val fragmentList = listOf(breedFragment, imageFragment, favouriteFragment   )
+    private val fragmentList = listOf(breedFragment, imageFragment, favouriteFragment)
     private val viewPagerAdapter by lazy { ViewPagerAdapter(this@HomeActivity, fragmentList) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
         setup()
     }
 
-    companion object{
+    companion object {
         var userApi: String? = null
     }
 

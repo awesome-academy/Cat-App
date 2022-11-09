@@ -1,7 +1,13 @@
 package com.example.catapp.data.source.remote.fetchjson
 
+import com.example.catapp.data.source.remote.fetchjson.delete.ParseDeleteResultJson
+import com.example.catapp.data.source.remote.fetchjson.post.ParseFavouriteResultJson
 import com.example.catapp.utils.BREEDS
+import com.example.catapp.utils.BREEDS_SEARCH
 import com.example.catapp.utils.CATEGORIES_TAG
+import com.example.catapp.utils.POST_FAV_TAG
+import com.example.catapp.utils.FAVOURITES
+import com.example.catapp.utils.DELETE_FAV
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -23,7 +29,7 @@ class ParseDataWithJson {
         return data
     }
 
-    private fun parseJsonToObject(jsonObject: JSONObject?, keyEntity: String): Any? {
+    fun parseJsonToObject(jsonObject: JSONObject?, keyEntity: String): Any? {
         var result: Any? = null
         try {
             if (jsonObject != null)  {
@@ -31,6 +37,10 @@ class ParseDataWithJson {
                     "" -> ParseCatJson().catParseJson(jsonObject)
                     BREEDS -> ParseBreedsJson().breedParse(jsonObject)
                     CATEGORIES_TAG -> ParseCategoryJson().categoryParse(jsonObject)
+                    BREEDS_SEARCH -> ParseBreedsSearchJson().breedParse(jsonObject)
+                    POST_FAV_TAG -> ParseFavouriteResultJson().favResultParse(jsonObject)
+                    FAVOURITES -> ParseFavouriteJson().breedParse(jsonObject)
+                    DELETE_FAV -> ParseDeleteResultJson().delResultParse(jsonObject)
                     else -> null
                 }
             }

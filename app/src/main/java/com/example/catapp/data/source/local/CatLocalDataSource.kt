@@ -1,4 +1,4 @@
-package com.sun.mvp.data.repository.source.local
+package com.example.catapp.data.source.local
 
 import com.example.catapp.data.model.responsemodel.Cat
 import com.example.catapp.data.source.datasource.CatDataSource

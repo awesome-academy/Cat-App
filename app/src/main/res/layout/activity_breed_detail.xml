@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.homescreen.breeddetail.BreedDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_breed"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_300"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/feed_me" />
+
+            <TextView
+                android:id="@+id/text_breed_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/app_name"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_breed" />
+
+            <TextView
+                android:id="@+id/text_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintTop_toBottomOf="@+id/text_breed_name" />
+
+            <TextView
+                android:id="@+id/text_breed_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_4"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/text_breed_origin"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_detail" />
+
+            <TextView
+                android:id="@+id/text_breed_origin_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_2"
+                android:text="@string/get_your_api_here"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintBottom_toBottomOf="@id/text_breed_origin"
+                app:layout_constraintLeft_toRightOf="@id/text_breed_origin"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_breed_origin" />
+
+            <TextView
+                android:id="@+id/text_breed_life_span"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:elevation="@dimen/dp_4"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/text_breed_life_span"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_breed_origin" />
+
+            <TextView
+                android:id="@+id/text_breed_life_span_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_2"
+                android:elevation="@dimen/dp_4"
+                android:text="@string/get_your_api_here"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintBottom_toBottomOf="@id/text_breed_life_span"
+                app:layout_constraintLeft_toRightOf="@id/text_breed_life_span"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_breed_life_span" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:paddingHorizontal="@dimen/dp_8"
+                app:layout_constraintTop_toBottomOf="@id/text_breed_life_span"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_rating_layout" />
+
+            <TextView
+                android:id="@+id/text_wiki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_30"
+                android:fontFamily="@font/inter_extra_bold"
+                android:text="@string/text_read_more_at_wikipedia"
+                android:textColor="@color/color_attractive"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_rating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

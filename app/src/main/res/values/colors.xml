@@ -8,10 +8,15 @@
     <color name="color_black">#FF000000</color>
     <color name="color_black_trans">#E6000000</color>
     <color name="color_white">#FFFFFFFF</color>
+    <color name="color_white_trans">#8AE7DAE1</color>
     <color name="color_shuttle_grey">#5C5E61</color>
     <color name="color_nevada">#6A6D71</color>
     <color name="login_background_color">#54CCCCCC</color>
+    <color name="dialog_background_color">#7AFFFDFD</color>
     <color name="home_background_color">#14E66591</color>
     <color name="color_pink">#E87CA7</color>
+    <color name="color_pink_star">#DC226C</color>
+    <color name="color_attractive">#052AE3</color>
     <color name="color_pink_tabLayout">#77E87CA7</color>
 </resources>
+

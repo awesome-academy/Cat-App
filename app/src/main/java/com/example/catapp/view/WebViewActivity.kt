@@ -1,9 +1,11 @@
 package com.example.catapp.view
 
-
 import android.os.Bundle
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.example.catapp.databinding.ActivityWebViewBinding
-import com.example.catapp.utils.CAT_URL
+import com.example.catapp.utils.WEB_URL
 import com.example.catapp.utils.base.BaseActivity
 
 class WebViewActivity : BaseActivity<ActivityWebViewBinding>(ActivityWebViewBinding::inflate) {
@@ -16,8 +18,17 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(ActivityWebViewBind
     private fun openWebView() {
         binding.webViewSignup.run {
             settings.javaScriptEnabled = true
-            webChromeClient
-            loadUrl(CAT_URL)
+            val wikiUrl = intent.getStringExtra(WEB_URL)
+            webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(
+                    view: WebView?, request: WebResourceRequest?
+                ): Boolean {
+                    return false
+                }
+            }
+            if (wikiUrl != null) {
+                loadUrl(wikiUrl)
+            }
         }
     }
 }

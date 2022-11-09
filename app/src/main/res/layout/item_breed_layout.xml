@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_8">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_Holder"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_10"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@id/img_sample"
+        app:layout_constraintLeft_toLeftOf="@id/img_sample"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_sample"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginStart="@dimen/dp_10"
+        android:elevation="@dimen/dp_4"
+        tools:src="@drawable/feed_me"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_breed_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:elevation="@dimen/dp_4"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@id/text_breed_origin"
+        app:layout_constraintLeft_toRightOf="@id/img_sample"
+        app:layout_constraintTop_toTopOf="@id/cardView_Holder"
+        tools:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/text_breed_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp_4"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/text_breed_origin"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@id/text_breed_detail"
+        app:layout_constraintLeft_toLeftOf="@id/text_breed_name"
+        app:layout_constraintTop_toBottomOf="@id/text_breed_name" />
+
+    <TextView
+        android:id="@+id/text_breed_origin_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:elevation="@dimen/dp_4"
+        android:text="@string/get_your_api_here"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/text_breed_origin"
+        app:layout_constraintLeft_toRightOf="@id/text_breed_origin"
+        app:layout_constraintRight_toRightOf="@id/cardView_Holder"
+        app:layout_constraintTop_toTopOf="@id/text_breed_origin" />
+
+    <TextView
+        android:id="@+id/text_breed_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp_4"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/text_breed_detail"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/cardView_Holder"
+        app:layout_constraintLeft_toLeftOf="@id/text_breed_name"
+        app:layout_constraintTop_toBottomOf="@id/text_breed_origin_content" />
+
+    <TextView
+        android:id="@+id/text_breed_detail_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:elevation="@dimen/dp_4"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/get_your_api_here"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@id/text_breed_detail"
+        app:layout_constraintLeft_toRightOf="@id/text_breed_detail"
+        app:layout_constraintRight_toRightOf="@id/cardView_Holder"
+        app:layout_constraintTop_toTopOf="@id/text_breed_detail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

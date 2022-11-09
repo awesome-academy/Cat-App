@@ -2,10 +2,11 @@ package com.example.catapp.data.source.remote.fetchjson
 
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
+import com.example.catapp.utils.BREEDS_SEARCH
 import com.sun.mvp.data.repository.source.remote.OnResultListener
 import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
@@ -25,7 +26,10 @@ class GetJson<T>(
     private var data: T? = null
 
     init {
-        callAPI()
+        when (keyEntity){
+            BREEDS_SEARCH -> callAPISearch()
+            else ->  callAPI()
+        }
     }
 
     private fun callAPI() {
@@ -42,12 +46,27 @@ class GetJson<T>(
         }
     }
 
+    private fun callAPISearch(){
+        mExecutor.execute {
+            val responseJson = getJsonFromUrl(urlString)
+            data = ParseDataWithJson().parseJsonToObject(JSONObject(responseJson), keyEntity) as? T
+            mHandler.post {
+                try {
+                    data?.let { listener.onSuccess(it) }
+                } catch (e: JSONException) {
+                    listener.onError(e)
+                }
+            }
+        }
+    }
+
     private fun getJsonFromUrl(urlString: String): String {
         val url = URL(urlString)
         val httpURLConnection = url.openConnection() as? HttpURLConnection
         httpURLConnection?.run {
             useCaches = false
             setRequestProperty(X_API_KEY, userAPI)
+            setRequestProperty(CONTENT_TYPE_HEAD, CONTENT_TYPE)
             connectTimeout = TIME_OUT
             readTimeout = TIME_OUT
             requestMethod = METHOD_GET
@@ -62,8 +81,6 @@ class GetJson<T>(
         }
         bufferedReader.close()
         httpURLConnection?.disconnect()
-        Log.d("Lmeow", "Data: $stringBuilder")
-        Log.d("Lmeow", "URL: $url")
         return stringBuilder.toString()
     }
 
@@ -71,5 +88,7 @@ class GetJson<T>(
         private const val TIME_OUT = 15000
         private const val METHOD_GET = "GET"
         private const val X_API_KEY = "x-api-key"
+        private const val CONTENT_TYPE_HEAD = "Content-Type"
+        private const val CONTENT_TYPE = "application/json"
     }
 }

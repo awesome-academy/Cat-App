@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:scaleType="center"
         android:id="@+id/image_cat"
         android:layout_width="130dp"
         android:layout_height="130dp"

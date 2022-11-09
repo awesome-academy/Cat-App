@@ -5,14 +5,14 @@ import com.example.catapp.data.source.datasource.BreedsDataSource
 import com.example.catapp.data.source.remote.fetchjson.GetJson
 import com.example.catapp.utils.BASE_URL_BREEDS
 import com.example.catapp.utils.BREEDS
-import com.example.catapp.utils.LIMIT_10
+import com.example.catapp.utils.LIMIT_20
 import com.sun.mvp.data.repository.source.remote.OnResultListener
 
 class BreedsRemoteDataSource : BreedsDataSource.Remote {
 
     override fun getBreeds(listener: OnResultListener<MutableList<BreedItem>>) {
         GetJson(
-            urlString = BASE_URL_BREEDS + LIMIT_10,
+            urlString = BASE_URL_BREEDS + LIMIT_20,
             keyEntity = BREEDS,
             userAPI = "",
             listener = listener

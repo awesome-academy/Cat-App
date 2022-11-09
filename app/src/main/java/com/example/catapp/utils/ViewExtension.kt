@@ -24,5 +24,7 @@ fun View.disable(context: Context) {
 }
 
 fun View.enable() {
+    backgroundTintList =
+        ContextCompat.getColorStateList(context, R.color.color_pink)
     isClickable = true
 }

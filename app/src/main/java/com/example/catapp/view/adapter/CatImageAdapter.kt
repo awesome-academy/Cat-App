@@ -7,7 +7,7 @@ import com.example.catapp.data.model.responsemodel.Cat
 import com.example.catapp.databinding.ItemImageLayoutBinding
 import com.example.catapp.utils.loadImage
 
-class CatImageAdapter : RecyclerView.Adapter<CatImageAdapter.ViewHolder>() {
+class CatImageAdapter(private val onClickItem: (Cat) -> Unit) : RecyclerView.Adapter<CatImageAdapter.ViewHolder>() {
 
     private val catList = mutableListOf<Cat>()
 
@@ -36,6 +36,7 @@ class CatImageAdapter : RecyclerView.Adapter<CatImageAdapter.ViewHolder>() {
         fun bindData(data: Cat) {
             val context = binding.root.context
             context.loadImage(data.url, binding.imageCat, false)
+            binding.root.setOnClickListener { onClickItem(data) }
         }
     }
 }
